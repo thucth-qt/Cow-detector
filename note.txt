@@ -1,0 +1,25 @@
+python train.py \
+--batch-size 8 \
+--img 640 640 \
+--data steel.yaml \
+--cfg cfg/yolor_csp_x.cfg \
+--weights '/content/drive/MyDrive/Colab Notebooks/yolor_csp_x/weights/best.pt' \
+--device 0 \
+--name yolor_csp_x \
+--hyp hyp.scratch.640.yaml \
+--project "/content/drive/MyDrive/Colab Notebooks" \
+--epochs 900
+--exist-ok
+
+python detect.py \
+--names data/steel.names \
+--source ./output1010.avi \
+--cfg cfg/yolor_csp_x.cfg \
+--weights /content/drive/MyDrive/yolor_csp_x3/weights/last.pt \
+--iou-thres 0.2 \
+--conf 0.11 \
+--img-size 640 \
+--lower 0.1 \
+--upper 0.6 \
+--min-count 2 \
+--device 0
