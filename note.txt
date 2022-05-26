@@ -1,9 +1,9 @@
 python train.py \
 --batch-size 8 \
 --img 640 640 \
---data steel.yaml \
+--data cow.yaml \
 --cfg cfg/yolor_csp_x.cfg \
---weights '/content/drive/MyDrive/Colab Notebooks/yolor_csp_x/weights/best.pt' \
+--weights '' \
 --device 0 \
 --name yolor_csp_x \
 --hyp hyp.scratch.640.yaml \

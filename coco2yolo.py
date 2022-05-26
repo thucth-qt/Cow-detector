@@ -93,7 +93,7 @@ def convert_coco_json_to_yolo_txt(output_path, json_file):
         anno_txt = os.path.join(output_path, img_name.split(".")[0] + ".txt")
         with open(anno_txt, "w") as f:
             for anno in anno_in_image:
-                category = anno["category_id"]
+                category = anno["category_id"]-1
                 bbox_COCO = anno["bbox"]
                 x, y, w, h = convert_bbox_coco2yolo(img_width, img_height, bbox_COCO)
                 f.write(f"{category} {x:.6f} {y:.6f} {w:.6f} {h:.6f}\n")
@@ -101,4 +101,5 @@ def convert_coco_json_to_yolo_txt(output_path, json_file):
     print("Converting COCO Json to YOLO txt finished!")
 
 if __name__=="__main__":
-    convert_coco_json_to_yolo_txt("/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/labels/train/","/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/annotations/instances_train.json")
+    # convert_coco_json_to_yolo_txt("/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/labels/train/","/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/annotations/instances_train.json")
+    convert_coco_json_to_yolo_txt("/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/labels/val/","/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/annotations/instances_val.json")
