@@ -1,7 +1,7 @@
 # train and val datasets (image directory or *.txt file with image paths)
 train: data/train.txt  # 118k images
 val: data/val.txt  # 5k images
-test: data/val.txt  # 20k images for submission to https://competitions.codalab.org/competitions/20794
+test: data/test.txt  # 20k images for submission to https://competitions.codalab.org/competitions/20794
 
 # number of classes
 nc: 1

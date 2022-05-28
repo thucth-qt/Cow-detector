@@ -1,3 +1,4 @@
+## Training
 python train.py \
 --batch-size 8 \
 --img 640 640 \
@@ -24,7 +25,7 @@ python train.py \
 --epochs 900 \
 --exist-ok
 
-
+## Detecting
 python detect_origin.py \
 --names data/cow.names \
 --source ./inference/images \
@@ -45,3 +46,15 @@ python detect_origin.py \
 --conf 0.08 \
 --img-size 1280 \
 --device 0
+
+## Testing
+python test.py\
+--data data/cow.yaml \
+--img 1280 \
+--batch 32 \
+--conf 0.001 \
+--iou 0.4 \
+--device 0 \
+--cfg cfg/yolor_p6.cfg \
+--weights "/content/drive/MyDrive/Colab Notebooks/yolor_p6/weights/best.pt" \
+--name yolor_p6_test
