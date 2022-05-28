@@ -25,15 +25,23 @@ python train.py \
 --exist-ok
 
 
-python detect.py \
---names data/steel.names \
---source ./output1010.avi \
+python detect_origin.py \
+--names data/cow.names \
+--source ./inference/images \
 --cfg cfg/yolor_csp_x.cfg \
 --weights /content/drive/MyDrive/yolor_csp_x3/weights/last.pt \
 --iou-thres 0.2 \
 --conf 0.11 \
 --img-size 640 \
---lower 0.1 \
---upper 0.6 \
---min-count 2 \
+--device 0
+
+
+python detect_origin.py \
+--names data/cow.names \
+--source ./inference/images \
+--cfg cfg/yolor_p6.cfg \
+--weights "/content/drive/MyDrive/Colab Notebooks/yolor_p6/weights/best.pt" \
+--iou-thres 0.1 \
+--conf 0.08 \
+--img-size 1280 \
 --device 0
