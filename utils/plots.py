@@ -18,6 +18,7 @@ from scipy.signal import butter, filtfilt
 
 from utils.general import xywh2xyxy, xyxy2xywh
 from utils.metrics import fitness
+import torch
 
 # Settings
 matplotlib.use('Agg')  # for writing to files only
@@ -104,7 +105,8 @@ def output_to_target(output, width, height):
                 cls = int(pred[5])
 
                 targets.append([i, cls, x, y, w, h, conf])
-
+    # import pdb; pdb.set_trace()
+    targets = [[t.cpu().data if isinstance(t, torch.Tensor) else t for t in target] for target in targets ]
     return np.array(targets)
 
 
@@ -277,8 +279,6 @@ def plot_labels(labels, save_dir=''):
     ax[2].scatter(b[2], b[3], c=hist2d(b[2], b[3], 90), cmap='jet')
     ax[2].set_xlabel('width')
     ax[2].set_ylabel('height')
-    plt.savefig(Path(save_dir) / 'labels.png', dpi=200)
-    plt.close()
 
     # seaborn correlogram
     try:

@@ -48,13 +48,15 @@ python detect_origin.py \
 --device 0
 
 ## Testing
-python test.py\
+python test.py \
 --data data/cow.yaml \
 --img 1280 \
---batch 32 \
+--batch-size 32 \
 --conf 0.001 \
 --iou 0.4 \
+--task test \
 --device 0 \
 --cfg cfg/yolor_p6.cfg \
 --weights "/content/drive/MyDrive/Colab Notebooks/yolor_p6/weights/best.pt" \
---name yolor_p6_test
+--name yolor_p6_test \
+--names data/cow.names
