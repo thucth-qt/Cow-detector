@@ -59,4 +59,5 @@ python test.py \
 --cfg cfg/yolor_p6.cfg \
 --weights "/content/drive/MyDrive/Colab Notebooks/yolor_p6/weights/best.pt" \
 --name yolor_p6_test \
---names data/cow.names
+--names data/cow.names \
+--project "/content/drive/MyDrive/Colab Notebooks/yolor_p6/"

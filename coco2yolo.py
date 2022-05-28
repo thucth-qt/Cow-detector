@@ -103,4 +103,4 @@ def convert_coco_json_to_yolo_txt(output_path, json_file):
 if __name__=="__main__":
     convert_coco_json_to_yolo_txt("/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/labels/train/","/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/annotations/instances_train.json")
     convert_coco_json_to_yolo_txt("/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/labels/val/","/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Train/annotations/instances_val.json")
-    convert_coco_json_to_yolo_txt("/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Test/labels/test/","/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Test/annotations/instances_val.json")
+    convert_coco_json_to_yolo_txt("/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Test/labels/val/","/content/Cow-detector/dataset/Sub-levels/Detection_and_localisation/Test/annotations/instances_val.json")
