@@ -25,6 +25,20 @@ python train.py \
 --epochs 900 \
 --exist-ok
 
+python train.py \
+--batch-size 1 \
+--img 1280 1280 \
+--data mixed_shed_1.yaml \
+--cfg cfg/yolor_p6.cfg \
+--weights '' \
+--device 0 \
+--name yolor_p6_mixed_shed_draft \
+--hyp hyp.scratch.1280.yaml \
+--project "/content/drive/MyDrive/Colab Notebooks" \
+--epochs 900 \
+--exist-ok
+
+
 ## Detecting
 python detect_origin.py \
 --names data/cow.names \

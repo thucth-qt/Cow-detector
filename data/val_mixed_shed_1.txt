@@ -1,0 +1,10 @@
+/content/Cow-detector/dataset/mixed-shed-1/images/1#15$20220521145849962.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#15$20220521145824948.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#15$20220521150031678.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#15$20220521145838395.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#15$20220521150000527.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#15$20220521145828178.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#15$20220521150030730.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#17$20220521143831614.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#15$20220521145806964.jpg
+/content/Cow-detector/dataset/mixed-shed-1/images/1#17$20220521143905095.jpg
