@@ -61,3 +61,19 @@ python test.py \
 --name yolor_p6_test \
 --names data/cow.names \
 --project "/content/drive/MyDrive/Colab Notebooks/yolor_p6/"
+
+
+## Testing
+python test.py \
+--data data/obj.yaml \
+--img 1280 \
+--batch-size 32 \
+--conf 0.001 \
+--iou 0.4 \
+--task test \
+--device 0 \
+--cfg cfg/yolor_p6.cfg \
+--weights "/content/drive/MyDrive/Colab Notebooks/dairy_test/yolor_p6/weights/best.pt" \
+--name yolor_p6_test \
+--names data/obj.names \
+--project "/content/drive/MyDrive/Colab Notebooks/dairy_test/yolor_p6/"
