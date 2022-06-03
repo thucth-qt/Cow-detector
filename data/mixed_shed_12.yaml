@@ -1,0 +1,16 @@
+# train and val datasets (image directory or *.txt file with image paths)
+train: data/train_mixed_shed_12.txt  # 118k images
+val: data/val_mixed_shed_12.txt  # 5k images
+test: data/val_mixed_shed_12.txt  # 20k images for submission to https://competitions.codalab.org/competitions/20794
+
+# number of classes
+nc: 5
+
+# class names
+names: [
+'Cow',
+'Tractor',
+'Person',
+'Feed-Level',
+'Feed-Distance',
+]

@@ -38,6 +38,19 @@ python train.py \
 --epochs 900 \
 --exist-ok
 
+python train.py \
+--batch-size 8 \
+--img 1280 1280 \
+--data mixed_shed_12.yaml \
+--cfg cfg/yolor_p6.cfg \
+--weights '/content/drive/MyDrive/Colab Notebooks/yolor_p6_mixed_shed_1/weights/best.pt' \
+--device 0 \
+--name yolor_p6_mixed_shed_12 \
+--hyp hyp.scratch.1280.yaml \
+--project "/content/drive/MyDrive/Colab Notebooks" \
+--epochs 1500 \
+--exist-ok
+
 
 ## Detecting
 

@@ -33,7 +33,7 @@ from utils.loss import compute_loss
 from utils.plots import plot_images, plot_labels, plot_results, plot_evolution
 from utils.torch_utils import ModelEMA, select_device, intersect_dicts, torch_distributed_zero_first
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger()
 
 try:
     import wandb
@@ -231,7 +231,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
                 'Starting training for %g epochs...' % (imgsz, imgsz_test, dataloader.num_workers, save_dir, epochs))
     
     torch.save(model, wdir / 'init.pt')
-    
+    total_viz_batch=3
     for epoch in range(start_epoch, epochs):  # epoch ------------------------------------------------------------------
         model.train()
 
@@ -261,6 +261,7 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
         if rank in [-1, 0]:
             pbar = tqdm(pbar, total=nb)  # progress bar
         optimizer.zero_grad()
+
         for i, (imgs, targets, paths, _) in pbar:  # batch -------------------------------------------------------------
             ni = i + nb * epoch  # number integrated batches (since train start)
             imgs = imgs.to(device, non_blocking=True).float() / 255.0  # uint8 to float32, 0-255 to 0.0-1.0
@@ -311,9 +312,10 @@ def train(hyp, opt, device, tb_writer=None, wandb=None):
                 pbar.set_description(s)
 
                 # Plot
-                if plots and ni < 3:
+                if total_viz_batch>0:
                     f = save_dir / f'train_batch{ni}.jpg'  # filename
                     plot_images(images=imgs, targets=targets, paths=paths, fname=f)
+                    total_viz_batch-=1
                     # if tb_writer:
                     #     tb_writer.add_image(f, result, dataformats='HWC', global_step=epoch)
                     #     tb_writer.add_graph(model, imgs)  # add model to tensorboard

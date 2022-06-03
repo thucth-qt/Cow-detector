@@ -144,3 +144,11 @@ if __name__=="__main__":
     convert_coco_json_to_yolo_txt(
         "/content/Cow-detector/dataset/mixed-shed-1/labels",
         "/content/Cow-detector/dataset/mixed-shed-1/annotations/instances_default.json")
+
+    convert_coco_json_to_yolo_txt(
+        "/content/Cow-detector/dataset/mixed-shed-2/labels",
+        "/content/Cow-detector/dataset/mixed-shed-2/annotations/instances_default.json")
+
+    # convert_coco_json_to_yolo_txt(
+    #     "/content/Cow-detector/dataset/feed-lane/labels",
+    #     "/content/Cow-detector/dataset/feed-lane/annotations/instances_default.json")
